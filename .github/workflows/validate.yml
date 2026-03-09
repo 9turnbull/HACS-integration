@@ -51,7 +51,7 @@ jobs:
         run: rm -rf tests
 
       - name: Hassfest validation
-        uses: home-assistant/actions/hassfest@87c064c607f3c5cc673a24258d0c98d23033bfc3 # master
+        uses: home-assistant/actions/hassfest@dce0e860c68256ef2902ece06afa5401eb4674e1 # master
 
   validate-hacs:
     needs:
@@ -60,7 +60,7 @@ jobs:
     name: With HACS Action
     steps:
       - name: HACS validation
-        uses: hacs/action@6f81caf1dd4cc0f615444dba4d4a3ceaa22db99c # main
+        uses: hacs/action@dcb30e72781db3f207d5236b861172774ab0b485 # main
         with:
           category: integration
 
@@ -159,7 +159,7 @@ jobs:
           python3 -m scripts.data.validate_category_data ${{  matrix.entry.category }} outputdata/${{ matrix.entry.category }}/data.json
 
       - name: Upload artifact
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: "${{ matrix.entry.category }}_${{ strategy.job-index }}"
           path: |
